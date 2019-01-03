@@ -1,13 +1,13 @@
 @echo off
-rem 将文件夹内指定文件名写入到txt中，不包括子文件夹
+rem ���ļ�����ָ���ļ���д�뵽txt�У����������ļ���
 set exte=".bat"
-rem 使用*号通配符表示所有扩展名，扩展名需加点，除非你有特殊需要
+rem ʹ��*��ͨ�����ʾ������չ������չ����ӵ㣬��������������Ҫ
 set file_name="*"
-rem 匹配特定文件名
+rem ƥ���ض��ļ���
 set dir_name=%~dp0
-rem 指定特定目录，%~dp0表示当前目录
+rem ָ���ض�Ŀ¼��%~dp0��ʾ��ǰĿ¼
 set txt_name="list.txt"
-rem 指定txt输出目录和文件名，默认为当前目录下的list.txt
+rem ָ��txt���Ŀ¼���ļ�����Ĭ��Ϊ��ǰĿ¼�µ�list.txt
 
 @echo on
 cd %dir_name%
