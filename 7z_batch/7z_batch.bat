@@ -9,7 +9,7 @@ rem 第1个参数给定了工作文件夹
 goto :GET_2
 rem 第3个参数存在
 rem 需要记录额外排除的文件名
-
+ 
 :QUESTION
 echo 本批处理可以将某一文件夹内的文件逐个压缩
 echo.

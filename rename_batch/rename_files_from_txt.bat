@@ -67,7 +67,7 @@ echo 否则退出
 set /p is_lazy=按回车键确认
 echo.
 
-if not exist src_list.txt ('dir %src_dir% /b >src_list.txt')
+if not exist src_list.txt dir %src_dir% /b >src_list.txt
 goto :RUN
 
 :CHECK
