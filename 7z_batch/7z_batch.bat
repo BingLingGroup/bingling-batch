@@ -1,7 +1,7 @@
-@echo on
+@echo off
 if "%1" EQU "" goto :QUESTION
 rem 不通过命令行参数运行，直接打开的情况，跳转至询问界面
-set work_dir=%2
+set "work_dir=%2"
 rem 以下通过命令行参数运行
 if not defined work_dir goto :GET_1
 rem 第3个参数，即额外排除的文件名不存在
@@ -19,29 +19,29 @@ echo.
 echo 输入待压缩的文件所在文件夹
 set /p work_dir=(默认为当前文件夹，回车为默认): 
 echo.
-if not defined work_dir set work_dir=%~dp0
+if not defined work_dir set "work_dir=%~dp0"
 
 echo 输入压缩后的压缩格式后缀(包括点)
 set /p dst_exte=(默认为.7z，请输入7z支持的压缩格式，回车为默认): 
-set run_bat_name=""
+set "run_bat_name="
 goto :WORK
 
 :GET_1
-set work_dir=%1
-set run_bat_name=""
+set "work_dir=%1"
+set "run_bat_name="
 goto :WORK
 
 :GET_2
-set work_dir=%1
-set run_bat_name=%2
+set "work_dir=%1"
+set "run_bat_name=%2"
 
 :WORK
 if not defined dst_exte set dst_exte=.7z
-cd %work_dir%
+cd "%work_dir%"
 for /f "delims=^" %%i in ('dir /b *') do (
-    if %%i NEQ 7z.exe (
-        if %%i NEQ %~nx0 (
-            if %%i NEQ %run_bat_name% (
+    if "%%i" NEQ 7z.exe (
+        if "%%i" NEQ "%~nx0" (
+            if "%%i" NEQ "%run_bat_name%" (
                 7z a ^"%%~ni%dst_exte%^" ^"%%i^"
             )
         )
