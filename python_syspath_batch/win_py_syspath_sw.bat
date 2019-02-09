@@ -62,7 +62,7 @@ setx PY_HOME "%pyhome%" /m
 goto :END
 
 :CH_OLD_2
-if "%pyhome:~-2%" EQU "27" (
+if "%pyhome:~-2%" EQU "%pyhome_1%" (
 @echo on
    setx PY_HOME "%pyhome:~0,-2%%pyhome_2%" /m
 @echo off
