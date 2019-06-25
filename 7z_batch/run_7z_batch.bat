@@ -7,4 +7,4 @@ set run_bat_name="run_7z_batch.bat"
 rem 需要额外忽略的一个文件名，若此脚本在工作文件夹内，则需要忽略
 @echo on
 %z7_bat_name% %work_path% %run_bat_name%
-pause 
+pause
